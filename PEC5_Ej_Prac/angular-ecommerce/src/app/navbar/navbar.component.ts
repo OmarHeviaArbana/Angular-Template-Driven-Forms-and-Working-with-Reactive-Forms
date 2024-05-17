@@ -7,19 +7,19 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   articleList: boolean = true;
-/*   articleNewTemplate: boolean = false;
-    articleNewReactive: boolean = false;
+  articleNewTemplate: boolean = false;
+ /*    articleNewReactive: boolean = false;
  */
   showComponent(component: string) {
     this.articleList = false;
-   /*  this.articleNewTemplate = false;
-    this.articleNewReactive = false; */
+     this.articleNewTemplate = false;
+    /*this.articleNewReactive = false; */
 
     if (component === 'articleList') {
       this.articleList = true;
-    } /* else if (component === 'articleNewTemplate') {
+    }  else if (component === 'articleNewTemplate') {
       this.articleNewTemplate = true;
-    } else if (component === 'articleNewReactive') {
+    }/* else if (component === 'articleNewReactive') {
       this.articleNewReactive = true;
     } */
   }
