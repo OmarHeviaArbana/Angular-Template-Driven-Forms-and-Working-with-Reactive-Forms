@@ -9,6 +9,7 @@ import { ArticleItemComponent } from './article-item/article-item.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleNewTemplateComponent } from './article-new-template/article-new-template.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { ArticleNewTemplateComponent } from './article-new-template/article-new-
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
