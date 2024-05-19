@@ -5,3 +5,23 @@
 .ng-valid.ng-dirty {
   border-color: #28a745;
 }
+
+h1 {
+font-size: 1.5rem;
+color: #181B3A;
+margin-bottom: 20px;
+}
+
+.form-container {
+background-color: white;
+margin: 0 auto;
+margin-top: 100px;
+max-width: 35%;
+padding: 40px;
+border-radius: 8px;
+}
+form div div div {
+font-size: 0.8rem;
+color: #dc3545;
+margin-top: 6px;
+}
