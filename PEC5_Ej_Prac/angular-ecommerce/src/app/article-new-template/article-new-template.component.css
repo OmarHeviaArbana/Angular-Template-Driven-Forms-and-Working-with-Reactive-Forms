@@ -1,37 +1,7 @@
-.article-form-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.ng-invalid.ng-dirty {
+  border-color: #dc3545;
 }
 
-.article-form-container div {
-  margin-bottom: 10px;
-}
-
-.article-form-container label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.article-form-container input[type="text"],
-.article-form-container input[type="number"],
-.article-form-container input[type="url"] {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-.article-form-container button {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.article-form-container button:disabled {
-  background-color: #cccccc;
+.ng-valid.ng-dirty {
+  border-color: #28a745;
 }

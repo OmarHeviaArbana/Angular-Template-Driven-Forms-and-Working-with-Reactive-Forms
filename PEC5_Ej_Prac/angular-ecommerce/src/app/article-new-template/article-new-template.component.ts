@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { Article } from './article-new-template.model';
-import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -11,13 +10,17 @@ import { NgForm } from '@angular/forms';
 export class ArticleNewTemplateComponent   {
 
 public article?: Article;
+constructor() {
+  this.article =  new Article('', 0, '', false,);
+}
 
 
-
-createArticle(articleForm: NgForm) {
+createArticle(articleForm: any) {
     if (articleForm.valid) {
       this.article = articleForm.value.article;
       console.log('Artículo Creado', this.article);
+    } else {
+      console.log('Formulario inválido');
     }
   }
 }

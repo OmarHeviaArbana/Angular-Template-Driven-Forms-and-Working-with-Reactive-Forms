@@ -1,21 +1,62 @@
-<form  (ngSubmit)="createArticle(articleForm)" #articleForm="ngForm" class="mt-10 mx-auto d-flex justify-content-center flex-column w-25 ">
+<form (ngSubmit)="createArticle(articleForm)" #articleForm="ngForm" class="mt-10 mx-auto d-flex justify-content-center flex-column w-25 ">
   <div ngModelGroup="article">
   <div class="mb-3">
-    <label for="name" class="form-label">Nombre de artículo:</label>
-    <input type="text" class="form-control" id="name" name="name" ngModel required>
+    <label for="name" class="form-label">Article Name:</label>
+    <input type="text" class="form-control" id="name" name="name" #name="ngModel" ngModel required>
+    <div *ngIf="name.invalid && name.dirty">
+      <div *ngIf="name.errors?.['required']">Article name is required</div>
+    </div>
   </div>
   <div class="mb-3">
-    <label for="price" class="form-label">Precio de artículo:</label>
-    <input type="number" class="form-control" id="price" name="price" ngModel required>
+    <label for="price" class="form-label">Price Name:</label>
+    <input type="number" class="form-control" id="price" name="price" #price="ngModel" ngModel required>
+    <div *ngIf="price.invalid && price.dirty">
+      <div *ngIf="price.errors?.['required']">Article price is required</div>
+    </div>
   </div>
   <div class="mb-3">
-    <label for="imageUrl" class="form-label">Imagen de artículo:</label>
-    <input type="text" class="form-control" id="imageUrl" name="imageUrl" ngModel required>
+    <label for="imageUrl" class="form-label">Article Image URL:</label>
+    <input type="text" class="form-control" id="imageUrl" name="imageUrl" pattern="https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}(\/[a-zA-Z0-9.-]+)*\/?[a-zA-Z0-9.-]+\.(jpg|jpeg|png|gif)" #imageUrl="ngModel" ngModel required>
+    <div *ngIf="price.invalid && price.dirty">
+      <div *ngIf="price.errors?.['required']">Article image URL is required</div>
+      <div *ngIf="price.errors?.['pattern']">Article image URL does not seem to br a valir URL</div>
+    </div>
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="isOnSale" name="isOnSale" ngModel>
-    <label class="form-check-label" for="isOnSale">Estado de Venta</label>
+    <label class="form-check-label" for="isOnSale">On Sale:</label>
   </div>
 </div>
- <button type="submit" class="btn btn-primary">Crear Artículo</button>
+ <button type="submit" class="btn btn-primary">Create</button>
 </form>
+<!-- <form #articleForm="ngForm" (ngSubmit)="createArticle()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre de artículo:</label>
+    <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="article.name">
+    <div *ngIf="articleForm.controls['name'].invalid && (articleForm.controls['name'].dirty || articleForm.submitted)">
+      <div *ngIf="articleForm.controls['name'].errors?.required">El nombre es obligatorio.</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Precio de artículo:</label>
+    <input type="number" class="form-control" id="price" name="price" required [(ngModel)]="article.price" min="0.1">
+    <div *ngIf="articleForm.controls['price'].invalid && (articleForm.controls['price'].dirty || articleForm.submitted)">
+      <div *ngIf="articleForm.controls['price'].errors?.required">El precio es obligatorio.</div>
+      <div *ngIf="articleForm.controls['price'].errors?.min">El precio debe ser al menos 0,1€.</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="imageUrl" class="form-label">URL de la imagen:</label>
+    <input type="text" class="form-control" id="imageUrl" name="imageUrl" required [(ngModel)]="article.imageUrl" pattern="https?://.*">
+    <div *ngIf="articleForm.controls['imageUrl'].invalid && (articleForm.controls['imageUrl'].dirty || articleForm.submitted)">
+      <div *ngIf="articleForm.controls['imageUrl'].errors?.required">La URL de la imagen es obligatoria.</div>
+      <div *ngIf="articleForm.controls['imageUrl'].errors?.pattern">La URL de la imagen no es válida.</div>
+    </div>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="isOnSale" name="isOnSale" [(ngModel)]="article.isOnSale">
+    <label class="form-check-label" for="isOnSale">En venta</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Crear Artículo</button>
+</form>
+ -->
