@@ -1,13 +1,12 @@
 # Ejercicio 4 – Preguntas teóricas sobre formularios reactivos Angular
 
-## ¿Qué son, para qué sirven y cómo se utilizan FormControl, FormGroup y FormBuilder?
+## **1. ¿Qué son, para qué sirven y cómo se utilizan FormControl, FormGroup y FormBuilder?**
 
 ### **FormControl**
 
 Es el núcleo de cualquier formulario reactivo. Representa directamente un elemento individual del formulario. Cualquier formulario reactivo no es más que un conjunto de FormControls agrupados y es a nivel de FormControl donde asignamos valores iniciales y validadores.
 
 ```text
-
 import { FormControl } from '@angular/forms';
 
 /// Creación del FormControl
@@ -18,7 +17,6 @@ import { FormControl } from '@angular/forms';
     get name() {
         return name.value;
     }
-
 ```
 
 ### **FormGroup**
@@ -43,7 +41,6 @@ import { FormGroup, FormControl } from '@angular/forms';
     get name() {
         return this.article.get('name');
     }
-
 ```
 
 ### **FormBuilder**
@@ -68,15 +65,22 @@ constructor(private fb: FormBuilder) {
       onSale: [false]
     });
 
-//Acceder a un valor concreto del formulario 
+// Acceder a un valor concreto del formulario 
 
      get name() {
         return this.article.get('name');
     }
-
 ```
 
-## Busca en la página oficial de Angular (o utiliza un recurso de O’Reilly) en el que se especifiquen todos los validadores que incluye Angular para ser utilizados en los formularios reactivos. Construye una tabla de resumen de estos.
+## **2. Busca en la página oficial de Angular (o utiliza un recurso de O’Reilly) en el que se especifiquen todos los validadores que incluye Angular para ser utilizados en los formularios reactivos. Construye una tabla de resumen de estos.**
+
+| Estado       | CSS class si True | CSS class si False | Explicación |
+|--------------|-------------------|--------------------|--------------
+| Visited      | ng-touched        | ng-untouched       | **Touched:** Indica que el control ha sido enfocado y desenfocado (es decir, el usuario ha interactuado con él). **Untouched:** Indica que el control nunca ha sido enfocado.
+| Changed      | ng-dirty          | ng-pristine        | **Pristine**: Indica que el control no ha sido modificado desde que se cargó. **Dirty:** Indica que el control ha sido modificado por el usuario.
+| Valid        | ng-valid          | ng-invalid         | **Valid:** Indica que el control ha pasado todas las validaciones. **Invalid:** Indica que el control no ha pasado una o más validaciones.  
 
 
-## ¿Qué son, cuáles son y para qué sirven los estados en los formularios reactivos?
+## **3. ¿Qué son, cuáles son y para qué sirven los estados en los formularios reactivos?**
+
+Para manejar el estado y la validez del control del formulario reactivo es bastante similar a cómo lo manejamos con formularios basados en plantillas. Lo que cambia es el método de acceso a estas propiedades ya que en los formularios reactivos entran juego los estados de control. Estos estados son propiedades que reflejan la condición actual de los controles del formulario y, para ello, utiliza mensajes de error junto a cada campo. 
