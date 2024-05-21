@@ -1,6 +1,6 @@
 
 <div class="form-container">
-  <h1>Nuevo Article Template</h1>
+  <h1>New Article Template</h1>
   <form (ngSubmit)="createArticle(articleForm)" #articleForm="ngForm" class="d-flex justify-content-center flex-column">
     <div ngModelGroup="article">
       <div class="mb-3">
@@ -22,7 +22,7 @@
         <input type="text" class="form-control" id="imageUrl" name="imageUrl" pattern="https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}(\/[a-zA-Z0-9.-]+)*\/?[a-zA-Z0-9.-]+\.(jpg|jpeg|png|gif)" #imageUrl="ngModel" ngModel required>
         <div *ngIf="imageUrl.invalid && imageUrl.dirty || imageUrl.invalid && articleForm.submitted">
           <div *ngIf="imageUrl.errors?.['required']">Article image URL is required</div>
-          <div *ngIf="imageUrl.errors?.['pattern']">Article image URL does not seem to br a valir URL</div>
+          <div *ngIf="imageUrl.errors?.['pattern']">Article image URL does not seem to be a valid URL</div>
         </div>
       </div>
       <div class="mb-3 form-check">

@@ -3,10 +3,10 @@
     <a class="navbar-brand" href="#">Angular Ecommerce</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" href="#">Inicio</a>
+        <a class="nav-link active" href="#" (click)="showComponent('articleList')">Inicio</a>
         <a class="nav-link active" href="#" (click)="showComponent('articleList')">Artículos</a>
-        <a class="nav-link " href="#" (click)="showComponent('articleNewTemplate')">Nuevo artículo template</a>
-        <a class="nav-link disabled" href="#" aria-disabled="true" (click)="showComponent('articleNewReactive')">Nuevo artículo reactivo</a>
+        <a class="nav-link" href="#" (click)="showComponent('articleNewTemplate')">Nuevo artículo template</a>
+        <a class="nav-link" href="#" (click)="showComponent('articleNewReactive')">Nuevo artículo reactivo</a>
       </div>
     </div>
   </div>
@@ -19,8 +19,8 @@
  <div *ngIf="articleNewTemplate">
   <app-article-new-template></app-article-new-template>
 </div>
-<!--
+
 <div *ngIf="articleNewReactive">
   <app-article-new-reactive></app-article-new-reactive>
 </div>
- -->
+

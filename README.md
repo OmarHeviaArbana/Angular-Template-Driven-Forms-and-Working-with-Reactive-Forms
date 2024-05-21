@@ -47,3 +47,8 @@ npm install --save bootstrap@5.3.3
 ```
 
 Utilzar fb (Form Builder) sea *private* es recomendable para mantener la encapsulación, seguridad y claridad del código. Esto ayuda a asegurarnos que las dependencias inyectadas son solo accesibles dentro del nuesto componente.
+
+- Para los formularios reactivos se debe inyectar le siguiente dependencia en el app.module.ts
+ ```text
+ import { ReactiveFormsModule } from '@angular/forms';
+ ```
