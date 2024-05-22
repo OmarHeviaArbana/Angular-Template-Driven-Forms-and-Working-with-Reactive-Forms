@@ -1,5 +1,6 @@
 .article-container{
   width: fit-content;
+  min-height: 600px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -8,7 +9,9 @@
   margin: 0 auto;
   margin-top: 100px;
   background-color: white;
+  opacity: 70%;
 }
+
 
 .article-image {
   width: 400px;
@@ -18,6 +21,8 @@
 }
 .article-onSale {
   box-shadow: rgb(61, 61, 229) 0px -2px 50px 0px;
+ opacity: 100%;
+
 
 }
 
@@ -41,6 +46,8 @@ div p {
 div h2 {
   margin-top: 20px;
   font-size: 1.4rem;
+  text-align: center;
+  font-weight: 700;
 }
 div div p:nth-child(3) {
   margin-top: 0;
@@ -50,7 +57,7 @@ div div p:nth-child(3) {
 }
 div div p:nth-child(4) {
   margin-top: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: rgb(61, 61, 229);
 }
 button {
@@ -64,8 +71,20 @@ button {
   color: rgb(128, 128, 128, 0.4);
 }
 
+input {
+  width: 200px;
+  margin: auto;
+
+}
+
 .rowBtns {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.rowBtns p {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-bottom: 87px;
 }

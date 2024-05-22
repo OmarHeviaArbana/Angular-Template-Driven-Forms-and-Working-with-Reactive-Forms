@@ -6,7 +6,8 @@
         <label for="name" class="form-label">Article Name:</label>
         <input type="text" class="form-control" id="name" formControlName="name">
         <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
-          <div *ngIf="name?.errors?.['required']">Article name is required</div>
+          <div *ngIf="errorControl('name', 'required')">Article name is required</div>
+          <div *ngIf="errorControl('name', 'invalidName')">Article name not valid</div>
         </div>
       </div>
       <div class="mb-3">
